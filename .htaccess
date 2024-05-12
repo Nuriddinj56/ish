@@ -1,0 +1,158 @@
+AddDefaultCharset UTF-8
+
+Options All -Indexes
+
+
+
+<FilesMatch ".(htaccess|htpasswd|tpl|kwm)$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+
+
+
+
+
+
+
+RewriteEngine on
+
+RewriteRule ^cpanel/([A-z0-9]+)$ ?page=cpanel&password=$1
+
+RewriteRule ^main/$ ?page=main
+RewriteRule ^about/$ ?page=about
+RewriteRule ^faq/$ ?page=faq
+RewriteRule ^stop/$ ?page=error
+RewriteRule ^agreement/$ ?page=agreement
+RewriteRule ^catalog/$ ?page=catalog
+
+RewriteRule ^forgot/$ ?page=forgot
+RewriteRule ^forgot/code/([A-z0-9]+)/$ ?page=forgot&code=$1
+RewriteRule ^register/$ ?page=register
+RewriteRule ^auth/$ ?page=auth
+RewriteRule ^logout/$ ?page=auth&action=logout
+
+
+RewriteRule ^profile/$ ?page=profile
+RewriteRule ^ajaxvaluta/$ ?ajax=ajax&page=ajaxvaluta
+RewriteRule ^ajaxusers/$ ?ajax=ajax&page=ajaxusers
+RewriteRule ^ajaxapishops/$ ?ajax=ajax&page=ajaxapishops
+RewriteRule ^ajaxgroupshops/$ ?ajax=ajax&page=ajaxgroupshops
+RewriteRule ^ajaxcurrency/$ ?ajax=ajax&page=ajaxcurrency
+RewriteRule ^ajaxcardclients/$ ?ajax=ajax&page=ajaxcardclients
+RewriteRule ^ajaxtransbot/$ ?ajax=ajax&page=ajaxtransbot
+RewriteRule ^checkconfirm/([0-9]+)/$ ?ajax=ajax&page=checkconfirm&zakaz=$1
+RewriteRule ^shops/$ ?page=shops
+RewriteRule ^chat/$ ?page=chat
+RewriteRule ^alltrans/$ ?page=alltrans
+RewriteRule ^cardclients/$ ?page=cardclients
+RewriteRule ^checkpay/$ ?page=checkpay
+RewriteRule ^log/$ ?page=log
+RewriteRule ^mybots/$ ?page=mybots
+RewriteRule ^cardshops/$ ?page=cardshops
+RewriteRule ^users/$ ?page=users
+RewriteRule ^currency/$ ?page=currency
+RewriteRule ^transactions/$ ?page=transactions
+RewriteRule ^coinbase/$ ?page=coinbase
+RewriteRule ^smstemp/$ ?page=smstemp
+RewriteRule ^transbot/$ ?page=transbot
+RewriteRule ^transapi/$ ?page=transapi
+RewriteRule ^simbank/$ ?page=simbank
+RewriteRule ^bottext/$ ?page=bottext
+RewriteRule ^cryptotrans/$ ?page=cryptotrans
+RewriteRule ^exchange/$ ?page=exchange
+RewriteRule ^parschange/$ ?page=parschange
+RewriteRule ^apishops/$ ?page=apishops
+RewriteRule ^setting/$ ?page=setting
+RewriteRule ^apibots/$ ?page=apibots
+RewriteRule ^bot/([0-9]+)/$ ?page=bot&id=$1
+RewriteRule ^shop/([0-9]+)/$ ?page=shop&idshop=$1
+RewriteRule ^groupshops/$ ?page=groupshops
+
+
+
+
+RewriteRule ^ajaxcartmain/([0-9]+)/$ ?ajax=ajax&page=ajaxcartmain&id_card=$1
+RewriteRule ^ajaxcartmaintwo/([0-9]+)/$ ?ajax=ajax&page=ajaxcartmaintwo&id_cardtwo=$1
+RewriteRule ^showcashall/$ ?ajax=ajax&page=showcashall
+RewriteRule ^showcashbtc/$ ?ajax=ajax&page=showcashbtc
+RewriteRule ^sendmoney/$ ?ajax=ajax&page=sendmoney
+RewriteRule ^sendmoneygo/$ ?ajax=ajax&page=sendmoneygo
+RewriteRule ^ajaxexchange/$ ?ajax=ajax&page=ajaxexchange
+RewriteRule ^adminactive/$ ?ajax=ajax&page=adminactive
+RewriteRule ^ajaxcryptotrans/$ ?ajax=ajax&page=ajaxcryptotrans
+RewriteRule ^orderactive/$ ?ajax=ajax&page=orderactive
+RewriteRule ^botsetting/$ ?ajax=ajax&page=botsetting
+RewriteRule ^sendrefmoney/$ ?ajax=ajax&page=sendrefmoney
+RewriteRule ^showrefvivod/([0-9]+)/$ ?ajax=ajax&page=showrefvivod&zakaz=$1
+RewriteRule ^newday/$ ?ajax=ajax&page=newday
+RewriteRule ^allbotsnecro/$ ?ajax=ajax&page=allbotsnecro
+RewriteRule ^searchdatabots/$ ?ajax=ajax&page=searchdatabots
+RewriteRule ^searchdata/$ ?ajax=ajax&page=searchdata
+RewriteRule ^addbotsnecro/$ ?ajax=ajax&page=addbotsnecro
+RewriteRule ^showrandcrypto/$ ?ajax=ajax&page=showrandcrypto
+RewriteRule ^showtopshop/$ ?ajax=ajax&page=showtopshop
+RewriteRule ^showtodaycash/$ ?ajax=ajax&page=showtodaycash
+RewriteRule ^showoutcash/$ ?ajax=ajax&page=showoutcash
+RewriteRule ^ajaxsimbank/$ ?ajax=ajax&page=ajaxsimbank
+RewriteRule ^statmenu/$ ?ajax=ajax&page=statmenu
+RewriteRule ^checkcurrency/$ ?ajax=ajax&page=checkcurrency
+RewriteRule ^checkcurrencyclients/$ ?ajax=ajax&page=checkcurrencyclients
+RewriteRule ^callback/$ ?ajax=ajax&page=callback
+RewriteRule ^checkcard/([0-9]+)/$ ?ajax=ajax&page=checkcard&idzakaz=$1
+RewriteRule ^check/([0-9]+)/$ ?ajax=ajax&page=check&idzakaz=$1
+RewriteRule ^searchreferal/$ ?ajax=ajax&page=searchreferal
+RewriteRule ^searchreferals/$ ?ajax=ajax&page=searchreferals
+RewriteRule ^searchadmin/$ ?ajax=ajax&page=searchadmin
+RewriteRule ^crpercentbtc/$ ?ajax=ajax&page=crpercentbtc
+RewriteRule ^crpercentltc/$ ?ajax=ajax&page=crpercentltc
+RewriteRule ^crpercenteth/$ ?ajax=ajax&page=crpercenteth
+RewriteRule ^crpercentusdt/$ ?ajax=ajax&page=crpercentusdt
+RewriteRule ^celcash/$ ?ajax=ajax&page=celcash
+RewriteRule ^statshop/$ ?ajax=ajax&page=statshop
+
+RewriteRule ^sendcashcrypto/([0-9]+)/([A-z0-9]+)/$ ?ajax=ajax&page=sendcashcrypto&idshop=$1&uniqid=$2
+
+
+
+RewriteRule ^clearcash/$ ?ajax=ajax&page=clearcash
+RewriteRule ^checkbot/$ ?ajax=ajax&page=checkbot
+RewriteRule ^checkcoin/$ ?ajax=ajax&page=checkcoin
+RewriteRule ^addbots/$ ?ajax=ajax&page=addbots
+RewriteRule ^addsmstemp/$ ?ajax=ajax&page=addsmstemp
+RewriteRule ^checkcardapi/$ ?ajax=ajax&page=checkcardapi
+RewriteRule ^delsmstemp/([0-9]+)/$ ?ajax=ajax&page=delsmstemp&id=$1
+RewriteRule ^delsbot/([0-9]+)/$ ?ajax=ajax&page=delsbot&id=$1
+RewriteRule ^cityget/([0-9]+)/$ ?ajax=ajax&page=cityget&idshop=$1
+RewriteRule ^tovar/([0-9]+)/$ ?ajax=ajax&page=tovar&idshop=$1
+RewriteRule ^begun/([0-9]+)/$ ?ajax=ajax&page=begun&idshop=$1
+RewriteRule ^region/([0-9]+)/$ ?ajax=ajax&page=region&idshop=$1
+RewriteRule ^rec/([0-9]+)/$ ?ajax=ajax&page=records&idshop=$1
+RewriteRule ^norec/([0-9]+)/$ ?ajax=ajax&page=norecords&idshop=$1
+RewriteRule ^allrec/([0-9]+)/$ ?ajax=ajax&page=allrecords&idshop=$1
+RewriteRule ^allusers/([0-9]+)/$ ?ajax=ajax&page=recordsusers&idshop=$1
+RewriteRule ^allpays/([0-9]+)/$ ?ajax=ajax&page=allrecordspays&idshop=$1
+RewriteRule ^allcity/([0-9]+)/$ ?ajax=ajax&page=allrecordscity&idshop=$1
+RewriteRule ^allraion/([0-9]+)/$ ?ajax=ajax&page=allrecordsraion&&idcity=$1
+RewriteRule ^allassort/([0-9]+)/$ ?ajax=ajax&page=allrecordsassort&&idcity=$1
+
+
+RewriteRule ^delcity/([0-9]+)/([0-9]+)/$ ?ajax=ajax&page=delcity&city=$1&idshop=$2
+RewriteRule ^delraion/([0-9]+)/([0-9]+)/$ ?ajax=ajax&page=delraion&raion=$1&idshop=$2
+RewriteRule ^delassort/([0-9]+)/([0-9]+)/$ ?ajax=ajax&page=delassort&assort=$1&idshop=$2
+RewriteRule ^addassort/([0-9]+)/$ ?ajax=ajax&page=addassort&idshop=$1
+RewriteRule ^cityall/([0-9]+)/$ ?ajax=ajax&page=listcity&idshop=$1
+RewriteRule ^cityalls/([0-9]+)/$ ?ajax=ajax&page=listcitys&idshop=$1
+RewriteRule ^mcityall/([0-9]+)/$ ?ajax=ajax&page=mlistcity&idshop=$1
+RewriteRule ^cityassort/([0-9]+)/([0-9]+)/$ ?ajax=ajax&page=listcityassort&idshop=$1&idcity=$2
+RewriteRule ^raionall/([0-9]+)/([0-9]+)/$ ?ajax=ajax&page=listraion&idshop=$1&idcity=$2
+
+
+ErrorDocument 400 /stop/
+ErrorDocument 403 /stop/
+ErrorDocument 404 /stop/
+ErrorDocument 405 /stop/
+ErrorDocument 408 /stop/
+ErrorDocument 500 /stop/
+ErrorDocument 502 /stop/
+ErrorDocument 504 /stop/
